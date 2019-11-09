@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <h1>Bienvenido {{nombreAlumno}}</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Tu estatus</h3>
+            <p *ngIf="status">Status: <span class="text-success">Activo</span></p>
+            <p *ngIf="!status">Status: <span class="text-danger">No activo</span></p>
+          </div>
+          <div class="col-md-6">
+            <h3>Tu avance</h3>
+            <p>Porcentaje: <span class="text-success">{{porcentajeAlumno}}%</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h1>Resumen</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" *ngFor="let curso of cursos">
+            <span>{{curso.nombre}} status: {{curso.status}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
