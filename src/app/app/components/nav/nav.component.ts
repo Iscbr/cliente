@@ -11,7 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class NavComponent implements OnInit {
   usuarioLogeado: User;
-  constructor(private authService : AuthService, private route: Router) {
+  constructor(public authService : AuthService, private route: Router) {
   }
 
   ngOnInit() {

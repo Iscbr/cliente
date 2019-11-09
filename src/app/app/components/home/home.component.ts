@@ -9,9 +9,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private usuarioLogeado: User;
-  private cursosInscrito: any;
-  private porcentajeAlumno: number = 60;
+  usuarioLogeado: User;
+  cursosInscrito: any;
+  porcentajeAlumno: number = 60;
 
   constructor(private cursoService: CursoService, private route: Router) {}
 

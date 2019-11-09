@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./curso.component.css']
 })
 export class CursoComponent implements OnInit {
-  private datosCursos: any;
+  datosCursos: any;
   private usuarioLogeado: User;
   constructor(private cursoService: CursoService, private route: Router) {
     this.usuarioLogeado = new User();
