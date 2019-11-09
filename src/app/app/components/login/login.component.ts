@@ -36,19 +36,18 @@ export class LoginComponent implements OnInit {
         console.log("Data contiene: " + JSON.stringify(data));
         this.authService.guardarUsuario(data);
         Swal.fire({
-          position: 'top',
           type: 'success',
           title: 'Te has loggeado exitosamente.',
           showConfirmButton: true
         });
-        this.route.navigate(["/cursos"]);
+        this.route.navigate(["/home"]);
       },
       error => {
         console.log("Error contiene: " + JSON.stringify(error));
         Swal.fire({
           type: 'error',
           title: 'Oops... Algo fue mal',
-          text: 'Usuario o contraseña invalidos, verifalas e intenta de nuevo.'
+          text: 'Usuario o contraseña invalidos, verificalas e intenta de nuevo.'
         })
       });
   }

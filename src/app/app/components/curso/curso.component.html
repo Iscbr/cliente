@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4" *ngFor="let curso of datosCursos.Cursos">
+    <div class="col-md-4" *ngFor="let curso of this.datosCursos">
 
 
       <div class="card my-3">
         <div class="card-header">
-          {{curso.nombre}}
+          <p class="display-5"><strong>{{curso.nombre}}</strong></p>
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{curso.periodo}}</h5>
+          <h5 class="card-title">{{curso.profesor.nombre + ' ' + curso.profesor.apellidoPaterno}}</h5>
           <p class="card-text">{{curso.descripcion}}</p>
-          <a href="#" class="btn btn-primary">{{curso.profesor.nombre}}</a>
+          <button class="btn btn-primary" (click)="inscribirse(curso.nrc)">Inscribirme</button>
         </div>
       </div>
 

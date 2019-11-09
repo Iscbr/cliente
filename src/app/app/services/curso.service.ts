@@ -14,17 +14,16 @@ export class CursoService {
       })});
   }
 
-
-
-
-
-
   public obtenerTodosCursos(): Observable<any> {
     return this.httpClient.get('http://localhost:8080/curso/obtenerTodos');
   }
 
+  public inscribirse(nrc, matricula): Observable<any> {
+    return this.httpClient.put<any>('http://localhost:8080/curso/inscribir/' + nrc.toString() + '/' + matricula.toString(), null);
+  }
 
-
-
+  public obtenerCursosInscritos(matricula): Observable<any> {
+    return this.httpClient.get<any>('http://localhost:8080/curso/inscrito/' + matricula.toString());
+  }
 
 }

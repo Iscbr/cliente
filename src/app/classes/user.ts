@@ -5,4 +5,6 @@ export class User {
   apellidoPaterno: string;
   apellidoMaterno: string;
   email: String;
+  activo: boolean;
+  rol: string;
 }

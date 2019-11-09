@@ -16,17 +16,31 @@ export class AuthService {
       + usuario.matricula + "/" + usuario.password);
   }
 
+  public hacerLogout() {
+    this.usuario = null;
+    sessionStorage.removeItem('usuarioLogeado');
+  }
+
   public guardarUsuario(data: any): void {
     if (data == null)
       this.usuario = null;
     else {
       this.usuario = new User();
-      this.usuario.nombre = data.usuario.nombre;
-      this.usuario.apellidoPaterno = data.usuario.apellidoPaterno;
-      this.usuario.apellidoMaterno = data.usuario.apellidoMaterno;
-      this.usuario.email = data.usuario.email;
-      this.usuario.matricula = data.usuario.matricula;
-      this.usuario.password = data.usuario.password;
+      let dataUser;
+      if (data.alumno === undefined) {
+        this.usuario.rol = "Profesor";
+        dataUser = data.profesor
+      } else {
+        this.usuario.rol = "Alumno";
+        dataUser = data.alumno;
+      }
+      this.usuario.nombre = dataUser.nombre;
+      this.usuario.apellidoPaterno = dataUser.apellidoPaterno;
+      this.usuario.apellidoMaterno = dataUser.apellidoMaterno;
+      this.usuario.email = dataUser.email;
+      this.usuario.matricula = dataUser.matricula;
+      this.usuario.password = dataUser.password;
+      this.usuario.activo = dataUser.activo;
 
       sessionStorage.setItem('usuarioLogeado', JSON.stringify(this.usuario));
 

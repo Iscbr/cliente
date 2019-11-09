@@ -12,6 +12,7 @@ import {RouterModule} from '@angular/router';
 import { LoginComponent } from './app/components/login/login.component';
 import {FormsModule} from '@angular/forms';
 import {AuthService} from './app/services/auth.service';
+import { ProfesorComponent } from './app/components/profesor/profesor.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,16 @@ import {AuthService} from './app/services/auth.service';
     NavComponent,
     FooterComponent,
     CursoComponent,
-    LoginComponent
+    LoginComponent,
+    ProfesorComponent
   ],
   imports: [
     RouterModule.forRoot([
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
       {path: 'cursos', component: CursoComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: 'profesor', component: ProfesorComponent}
     ]),
     BrowserModule,
     HttpClientModule,
